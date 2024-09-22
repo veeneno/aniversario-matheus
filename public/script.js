@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = 0;
 
     function showNextImage() {
-        images[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex + 1) % images.length;
-        images[currentIndex].classList.add('active');
+        images[currentIndex].classList.remove('active'); // Remove a classe 'active' da imagem atual
+        currentIndex = (currentIndex + 1) % images.length; // Atualiza o índice
+        images[currentIndex].classList.add('active'); // Adiciona a classe 'active' à nova imagem
     }
 
     setInterval(showNextImage, 3000); // Troca de imagem a cada 3 segundos
