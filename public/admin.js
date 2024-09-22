@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(data => {
                 const tbody = document.querySelector('#tabelaPresencas tbody');
                 tbody.innerHTML = '';
-
+    
                 data.forEach(p => {
                     const row = document.createElement('tr');
                     row.innerHTML = `
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .catch(error => console.error('Erro:', error));
     }
-
+    
     // Excluir presença
     window.excluirPresenca = function(id) {
         if (confirm("Você tem certeza que deseja excluir esta presença?")) {
