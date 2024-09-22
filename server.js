@@ -2,21 +2,21 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const sqlite3 = require('sqlite3').verbose();
-const path = require('path'); // Adicione esta linha
+const path = require('path');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 5000; // Porta dinâmica
 
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('public')); // Para servir arquivos estáticos
 
-// Conexão com o banco de dados SQLite
-const db = new sqlite3.Database(':memory:'); // Ou use um arquivo específico
+// Conexão com o banco de dados SQLite (banco persistente)
+const db = new sqlite3.Database(path.join(__dirname, 'database.db'));
 
 // Criação da tabela (exemplo)
 db.serialize(() => {
-    db.run("CREATE TABLE presencas (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, idade INTEGER, data_inscricao DATETIME DEFAULT CURRENT_TIMESTAMP)");
+    db.run("CREATE TABLE IF NOT EXISTS presencas (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, idade INTEGER, data_inscricao DATETIME DEFAULT CURRENT_TIMESTAMP)");
 });
 
 // Rota principal
