@@ -1,0 +1,111 @@
+/* Estilos gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Banner */
+.banner {
+    overflow: hidden;
+    max-width: 100%; /* Mantém a responsividade */
+}
+
+.banner img {
+    width: auto; /* Mantém o tamanho original */
+    height: auto; /* Mantém a proporção original */
+    max-width: 800px; /* Responsivo */
+    max-height: 450px; /* Limite de altura */
+    display: none; /* Oculta as imagens por padrão */
+    opacity: 0; /* Oculta as imagens por padrão */
+    transition: opacity 1s ease; /* Adiciona a transição de opacidade */
+}
+
+.banner img.active {
+    display: block; /* Mostra a imagem ativa */
+    opacity: 1; /* Torna a imagem visível */
+}
+
+
+/* Estilos de tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+}
+
+/* Botões */
+.btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Formulário */
+.form-container {
+    background: white;
+    border-radius: 10px;
+    padding: 40px; /* Aumentando o padding para uma caixa maior */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Aumentando a largura do formulário */
+    margin: 20px auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilo de confirmação de presença */
+.info {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 20px;
+}

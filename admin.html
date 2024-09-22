@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Convite de Aniversário</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Administração de Presenças</h1>
+    </header>
+    <div>
+        <label for="filtro">Filtrar por:</label>
+        <select id="filtro">
+            <option value="nome">Nome</option>
+            <option value="idade">Idade</option>
+            <option value="data">Data de Inscrição</option>
+        </select>
+        <button id="btnFiltrar" class="btn">Filtrar</button>
+    </div>
+    <div>
+        <table id="tabelaPresencas">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Data de Inscrição</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Os dados do banco de dados serão inseridos aqui -->
+            </tbody>
+        </table>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>
