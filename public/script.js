@@ -16,16 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const numPessoasInput = document.getElementById('numPessoas');
     const pessoasInputs = document.getElementById('pessoasInputs');
 
-    numPessoasInput.addEventListener('change', () => {
-        const numPessoas = numPessoasInput.value;
+    numPessoasInput.addEventListener('input', () => {
+        const numPessoas = parseInt(numPessoasInput.value, 10) || 0; // Converte para número
         pessoasInputs.innerHTML = ''; // Limpa os inputs anteriores
 
         for (let i = 0; i < numPessoas; i++) {
             pessoasInputs.innerHTML += `
-                <label for="nome${i}">Nome ${i + 1}:</label>
-                <input type="text" id="nome${i}" required>
-                <label for="idade${i}">Idade ${i + 1}:</label>
-                <input type="number" id="idade${i}" required>
+                <input type="text" id="nome${i}" placeholder="Nome ${i + 1}" required>
+                <input type="number" id="idade${i}" placeholder="Idade ${i + 1}" required>
             `;
         }
     });
