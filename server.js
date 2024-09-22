@@ -62,6 +62,6 @@ app.delete('/api/presencas/:id', (req, res) => {
 });
 
 // Início do servidor
-app.listen(port, "0.0.0.0" () => {
+app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
 });
