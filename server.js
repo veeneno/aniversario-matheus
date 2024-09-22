@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const sqlite3 = require('sqlite3').verbose();
+const path = require('path'); // Adicione esta linha
 
 const app = express();
 const port = 3000;
@@ -17,8 +18,6 @@ const db = new sqlite3.Database(':memory:'); // Ou use um arquivo específico
 db.serialize(() => {
     db.run("CREATE TABLE presencas (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, idade INTEGER, data_inscricao DATETIME DEFAULT CURRENT_TIMESTAMP)");
 });
-
-app.use(express.static(path.join(__dirname, 'public')));
 
 // Rota principal
 app.get('/', (req, res) => {
