@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Enviar os dados para o servidor
-        fetch('http://localhost:3000/api/rsvp', {
+        fetch('/api/rsvp', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

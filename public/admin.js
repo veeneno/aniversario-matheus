@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnFiltrar = document.getElementById('btnFiltrar');
 
     function carregarDados(filtro) {
-        fetch(`http://localhost:3000/api/presencas?filtro=${filtro}`)
+        fetch(`/api/presencas?filtro=${filtro}`)
             .then(response => response.json())
             .then(data => {
                 const tbody = document.querySelector('#tabelaPresencas tbody');
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Excluir presença
     window.excluirPresenca = function(id) {
         if (confirm("Você tem certeza que deseja excluir esta presença?")) {
-            fetch(`http://localhost:3000/api/presencas/${id}`, {
+            fetch(`/api/presencas/${id}`, {
                 method: 'DELETE'
             })
             .then(response => {
