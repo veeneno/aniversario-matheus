@@ -49,7 +49,7 @@ app.get('/api/presencas', (req, res) => {
     });
 });
 
-// Endpoint para deletar presença
+// Endpoint para deletar presenç
 app.delete('/api/presencas/:id', (req, res) => {
     const id = req.params.id;
     db.run("DELETE FROM presencas WHERE id = ?", id, function(err) {
