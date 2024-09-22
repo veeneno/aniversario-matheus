@@ -77,9 +77,10 @@ td {
 .form-container {
     background: white;
     border-radius: 10px;
-    padding: 40px; /* Aumentando o padding para uma caixa maior */
+    padding: 40px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 300px; /* Aumentando a largura do formulário */
+    width: 90%; /* Alterando para 90% para caber melhor em dispositivos móveis */
+    max-width: 400px; /* Define uma largura máxima */
     margin: 20px auto;
 }
 
@@ -97,6 +98,17 @@ input {
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+/* Adicionando responsividade */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 20px; /* Reduzindo o padding em telas menores */
+    }
+
+    input {
+        padding: 8px; /* Ajustando o padding dos inputs */
+    }
 }
 
 /* Estilo de confirmação de presença */
