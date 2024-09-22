@@ -18,6 +18,13 @@ db.serialize(() => {
     db.run("CREATE TABLE presencas (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, idade INTEGER, data_inscricao DATETIME DEFAULT CURRENT_TIMESTAMP)");
 });
 
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Rota principal
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 // Endpoint para receber RSVP
 app.post('/api/rsvp', (req, res) => {
     const presencas = req.body;
